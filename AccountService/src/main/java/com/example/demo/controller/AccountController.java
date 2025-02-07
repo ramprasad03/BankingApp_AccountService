@@ -18,12 +18,16 @@ import com.example.demo.service.AccountService;
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
+	
 	@Autowired
 	AccountService service;
+	
 
 	@PostMapping("/create")
 	public String saveAccount(@RequestBody Account account) {
+		System.out.println("git push");
 		return service.createAccount(account);
+		
 	}
 
 	@PutMapping("/update")
@@ -58,4 +62,6 @@ public class AccountController {
 			@PathVariable("amountToTransfer") double amountToTransfer) throws AccountNotFound, InsufficientBalance {
 		return service.fundTransfer(fromAccNo, toAccNo, amountToTransfer);
 	}
+	
+	
 }
