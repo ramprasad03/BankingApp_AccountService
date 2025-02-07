@@ -26,6 +26,7 @@ public class AccountController {
 	@PostMapping("/create")
 	public String saveAccount(@RequestBody Account account) {
 		System.out.println("git push");
+		System.out.println("local push");
 		return service.createAccount(account);
 		
 	}
